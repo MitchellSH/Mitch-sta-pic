@@ -1,0 +1,262 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
+
+
+/*-- ANIMATIONS CSS START --*/
+.animated.fadeIn{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+}
+.animated.fadeOut{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+}
+
+.animated.slideInDown{
+  -webkit-animation-duration: .5s;
+  -webkit-animation-delay: 0s;
+  -webkit-overflow: hidden;
+}
+.animated.rotateIn{
+  -webkit-animation-duration: 1.0s;
+  -webkit-animation-delay: 0s;
+  -webkit-overflow: hidden;
+}
+.animated.fadeInDown{
+  -webkit-animation-duration: .1s;
+  -webkit-animation-delay: 0s;
+  -webkit-overflow: hidden;
+}
+
+
+
+
+
+/*-- ANIMATIONS CSS END --*/
+
+.search-container{
+  display: none;
+}
+
+
+
+body {
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
+  /*text-shadow: 0px 0px 20px darkgrey !important;*/
+}
+
+h1{
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: grey;
+  font-size: 100px;
+}
+
+
+
+
+#reset{
+  font-size: 25px;
+  text-decoration: none;
+  float: right;
+  color: grey;
+  font-family: 'Lato', sans-serif;
+  /*margin-left: auto !important;*/
+  /*margin-right: auto !important;*/
+
+}
+
+#start{
+  font-size: 25px;
+  display: block;
+  /*float: left;*/
+  color: grey;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  /*margin-left: 30% !important;*/
+  /*margin-right: 60% !important;*/
+  margin: 0 auto;
+}
+
+p{
+  font-size: 25px;
+  color: grey !important;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+
+input{
+  width: 330px !important;
+  background: transparent !important;
+  border: 1px solid grey !important;
+}
+
+.btn{
+  background: transparent !important;
+  /*color: white !important;*/
+  border: 1px solid grey !important;
+}
+.btn:hover{
+  background: transparent !important;
+  /*color: white !important;*/
+  border: 1px solid darkgrey !important;
+}
+
+#pic-selection{
+  width: 960px !important;
+  height: 200px !important;
+  /*//border: 1px solid grey;*/
+  /*//border-radius: 4px;*/
+  margin-bottom: 20px !important;
+}
+
+#target{
+  width: 955px !important;
+  height: 100px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  margin-top: 25px !important;
+}
+
+
+
+
+/*-- BACKGROUND SLIDESHOW CSS START --*/
+
+h4{
+  color: white !important;
+}
+
+.cb-slideshow,
+.cb-slideshow:after{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.cb-slideshow:after{
+  content: '';
+  /*//background: transparent url(/media/pattern.png) repeat top left;*/
+  background: linear-gradient(to bottom, white, transparent);
+}
+
+.cb-slideshow li span{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+
+.cb-slideshow li div{
+  z-index: 1000;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 36s linear infinite 0s;
+}
+
+.cb-slideshow li div h4 {
+  font-family: 'Lato', sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px;
+}
+
+li{
+  list-style: none;
+}
+
+.cb-slideshow li:nth-child(1) span{
+  /*//background-image: url(/media/neb.jpg);*/
+  background: linear-gradient(white, #62D5FE) !important;
+  /*//background: linear-gradient(#62D5FE, white);*/
+  /*//background: linear-gradient(#0CFE94, #62D5FE);*/
+}
+.cb-slideshow li:nth-child(2) span{
+  /*//background-image: url(/media/car6.jpg);*/
+  /*//background: linear-gradient(blue, gold);*/
+  /*//background: linear-gradient(white, #0cfe94);*/
+  background: linear-gradient(#0cfe94, white) !important;
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+  /*//background-image: url(/media/car5.jpg);*/
+  /*//background: linear-gradient(turquoise, maroon);*/
+  background: linear-gradient(white, hotpink) !important;
+  /*//background: linear-gradient(maroon, white);*/
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+  /*//background-image: url(/media/car1.jpg);*/
+  /*//background: linear-gradient(yellow, hotpink);*/
+  /*//background: linear-gradient(white, hotpink);*/
+  background: linear-gradient(#6600ff, white) !important;
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+  /*//background-image: url(/media/car3.jpg);*/
+  /*//background: linear-gradient(steelblue, red);*/
+  background: linear-gradient(white, orange) !important;
+  /*//background: linear-gradient(orange, white);*/
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+  /*//background-image: url(/media/car4.jpg);*/
+  /*//background: linear-gradient(purple, green);*/
+  /*//background: linear-gradient(white, yellow);*/
+  background: linear-gradient(yellow, white) !important;
+  animation-delay: 30s;
+}
+
+.cb-slideshow li:nth-child(2) div{
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div{
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div{
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div{
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div{
+  animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
+  0% { opacity: 0 }
+  8% { opacity: 1 }
+  17% { opacity: 1 }
+  25% { opacity: 0 }
+  100% { opacity: 0 }
+}
+@keyframes titleAnimation {
+  0% { opacity: 0 }
+  8% { opacity: 1 }
+  17% { opacity: 1 }
+  19% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+/*-- BACKGROUND SLIDESHOW CSS END --*/
