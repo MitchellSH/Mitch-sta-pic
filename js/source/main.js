@@ -7,13 +7,14 @@
   function initialize(){
     $('#start').click(showSearchSection);
     $('.btn').click(getPics);
+    $('#next').click(showSelectedPics);
     // $('#reset').click(homeButton);
 //     $('#invert').click(invertPic);
 //     $('#sepia').click(sepiaPic);
 //     $('#gray').click(grayscalePic);
 //     $('#crazy').click(gangnam);
 //     $('#rock').click(rockN);
-    // $(document).on('click','img',add2Q);
+    $(document).on('click','img',add2Q);
     $('#search-bar').keypress(function(e){
       if(e.keyCode===13){
         getPics();
@@ -23,32 +24,43 @@
 //
 //
 //   //------Minor Show and Hide Functions--------
+
+  function showSelectedPics(){
+    $('.selected-pics').show().addClass('animated fadeIn');
+    $('#next-div').hide();
+
+    $('#title').text('Your Selected Pics').removeClass('animated slideInDown').addClass('animated rotateIn');
+    $('#title-p').hide();
+    $('.search-container').hide();
+    $('#target').hide();
+    $('.slideshow-div').show().addClass('animated fadeIn');
+  }
 //
 //
   function showSearchSection(){
+    $('.title').show().addClass('img animated fadeIn');
     $('.search-container').show().addClass('animated fadeIn');
-    // $('#container3').show();
-    $('#title').text('Search #Tags').addClass('animated slideInDown');
+    $('#title').text('Search #Tags').addClass('animated fadeIn');
     $('#title-p').text('Search and Select 6 Pics.').addClass('animated fadeIn');
     $('.start').hide();
   }
 
 //   function homeButton(){
 //     emptyPics();
-//     $('#Q-box').empty();
-//     $('#title').text('#Tagstapic');
+//     $('.selected-pics').empty();
+//     $('#title').text('Mitch-sta-pic');
 //     $('#title-p').text('');
-//     $('#container2').hide();
-//     $('#container3').hide();
-//     $('#search-box').val('');
-//     $('.orbitSlider').empty();
+//     $('.slideshow-div').hide();
+//     $('.search-container').hide();
+//     $('#search-bar').val('');
+//     // $('.orbitSlider').empty();
 //   }
-//
+// //
   function emptyPics(){
     $('#target').empty();
 
   }
-//
+
 //
 //   //------Minor Show and Hide Functions--------
 //
@@ -95,16 +107,17 @@
 //
 //   //------Adding To Q Functions----------
 //
-//   function add2Q(){
-//     if($('#Q-box').children('img').length < 6 || !$('#Q-box').children('img').length){
-//       $('#Q-box').append(this);
+  function add2Q(){
+    if($('.selected-pics').children('img').length < 6 || !$('.selected-pics').children('img').length){
+      $('.selected-pics').append(this);
+      $('#next-div').show().addClass('img animated fadeIn');
 //       var $li = $('<li>');
 //       var $bigPic = $(this).clone().attr('src');
 //       $bigPic = $bigPic.replace('_5','_6');
 //       $li.append('<img src="' +$bigPic+ '">');
 //       $('.orbitSlider').append($li);
-//     }
-//   }
+    }
+  }
 //   //------Adding To Q Functions----------
 //
 //   //------Instagram API Functions--------
@@ -112,7 +125,7 @@
 //
   function getPics(){
     emptyPics();
-    var tag = $('#search-bar').val();
+    var tag = $('#search-bar').val().replace(/\s/gi,"");
     var count = 6;
     var url = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?client_id=86cecf102fdd46599736c4deac452424&callback=?&count=' + count;
     $.getJSON(url, displayPics);
@@ -121,7 +134,7 @@
   function displayPics(instaData){
     var pics = instaData.data;
     for(var i=0; i < pics.length; i++){
-      $('#target').append('<img src="'+pics[i].images.thumbnail.url+'">');
+      $('#target').append('<img class="img animated fadeIn" src="'+pics[i].images.thumbnail.url+'">');
     }
   }
 //
