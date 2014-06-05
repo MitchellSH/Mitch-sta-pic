@@ -33,7 +33,22 @@
   -webkit-overflow: hidden;
 }
 .animated.fadeInDown{
-  -webkit-animation-duration: .1s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+  -webkit-overflow: hidden;
+}
+.img.animated.fadeInDown{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .3s;
+  -webkit-overflow: hidden;
+}
+.animated.fadeInUp{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+  -webkit-overflow: hidden;
+}
+.img.animated.fadeInUp{
+  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 0s;
   -webkit-overflow: hidden;
 }
@@ -43,6 +58,32 @@
 
 
 /*-- ANIMATIONS CSS END --*/
+
+.modal{
+  /*display: block;*/
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 700px !important;
+  height: 1000px !important;
+}
+#carousel-example-generic{
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+
+
+
+.title{
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-animation: hue 60s infinite linear !important;
+}
 
 a:hover{
   color: #0088cc !important;
@@ -57,6 +98,7 @@ a:active{
 
 
 body {
+  /*background: linear-gradient(white, #dedede) !important;*/
   background-color: #fff;
   font-family: 'Lato', sans-serif;
   /*font-family: 'Josefin Sans', sans-serif;*/
@@ -78,8 +120,13 @@ h1{
   width: 700px;
   /*border-radius: 130px !important;*/
 }
-h2{
+
+.mini{
   display: none;
+}
+
+h2{
+  /*display: none;*/
   border-bottom: 1px solid lightgrey;
   /*font-family: 'Shadows Into Light', cursive;*/
   /*font-family: 'Lato', sans-serif;*/
@@ -117,12 +164,14 @@ h2{
 }
 
 #slideshow{
-  display: block;
+  display: block !important;
+  color: #6B6B6B;
+  text-decoration: none;
+  /*margin: 0 auto !important;*/
+  /*margin-right: auto !important;*/
+  /*margin-left: auto !important;*/
   text-align: center;
   font-size: 25px;
-  margin: 0 auto !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
 }
 
 #next-div{
@@ -133,13 +182,18 @@ h2{
 }
 
 #next{
+  position: relative !important;
   display: block !important;
+  color: #6B6B6B;
+  text-decoration: none;
   /*margin: 0 auto !important;*/
   /*margin-right: auto !important;*/
   /*margin-left: auto !important;*/
   text-align: center;
   font-size: 25px;
-  margin-bottom: 5% !important;
+  bottom: 55px !important;
+  border-bottom: 1px solid lightgrey;
+  /*font-family: 'Lato', sans-serif;*/
 }
 
 #source-code{
@@ -147,7 +201,7 @@ h2{
   font-size: 25px;
   text-decoration: none;
   float: right;
-  color: grey;
+  color: #6B6B6B;
   border-bottom: 1px solid lightgrey;
   /*font-family: 'Lato', sans-serif;*/
   /*margin-left: auto !important;*/
@@ -163,7 +217,7 @@ h2{
   font-size: 25px;
   text-decoration: none;
   float: left;
-  color: grey;
+  color: #6B6B6B;
   border-bottom: 1px solid lightgrey;
   /*font-family: 'Lato', sans-serif;*/
   /*margin-left: auto !important;*/
@@ -178,7 +232,7 @@ h2{
   font-size: 25px;
   display: block;
   /*float: left;*/
-  color: grey;
+  color: #6B6B6B;
   text-decoration: none;
   /*font-family: 'Lato', sans-serif;*/
   /*margin-left: 30% !important;*/
@@ -230,18 +284,23 @@ p{
 input{
   width: 330px !important;
   background: transparent !important;
-  border: 1px solid grey !important;
+  border: 1px solid lightgrey !important;
+  border-top: 1px solid lightgrey !important;
+  border-top-left-radius: 60px !important;
+  border-bottom-left-radius: 60px !important;
 }
 
 .btn{
   background: transparent !important;
   /*color: white !important;*/
-  border: 1px solid grey !important;
+  border: 1px solid lightgrey !important;
+  border-top-right-radius: 60px !important;
+  border-bottom-right-radius: 60px !important;
 }
 .btn:hover{
   background: transparent !important;
   /*color: white !important;*/
-  border: 1px solid darkgrey !important;
+  border: 1px solid #0088cc !important;
 }
 
 #pic-selection{
@@ -333,13 +392,13 @@ li{
   /*//background-image: url(/media/car6.jpg);*/
   /*//background: linear-gradient(blue, gold);*/
   /*//background: linear-gradient(white, #0cfe94);*/
-  background: linear-gradient(#0cfe94, white) !important;
+  background: linear-gradient(white, #0cfe94, white) !important;
   animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
   /*//background-image: url(/media/car5.jpg);*/
   /*//background: linear-gradient(turquoise, maroon);*/
-  background: linear-gradient(white, hotpink) !important;
+  background: linear-gradient(hotpink, white) !important;
   /*//background: linear-gradient(maroon, white);*/
   animation-delay: 12s;
 }
@@ -347,7 +406,7 @@ li{
   /*//background-image: url(/media/car1.jpg);*/
   /*//background: linear-gradient(yellow, hotpink);*/
   /*//background: linear-gradient(white, hotpink);*/
-  background: linear-gradient(#6600ff, white) !important;
+  background: linear-gradient(white, #6600ff, white) !important;
   animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
@@ -361,7 +420,7 @@ li{
   /*//background-image: url(/media/car4.jpg);*/
   /*//background: linear-gradient(purple, green);*/
   /*//background: linear-gradient(white, yellow);*/
-  background: linear-gradient(yellow, white) !important;
+  background: linear-gradient(white, yellow, white) !important;
   animation-delay: 30s;
 }
 
@@ -394,6 +453,16 @@ li{
   17% { opacity: 1 }
   19% { opacity: 0 }
   100% { opacity: 0 }
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
 }
 
 /*-- BACKGROUND SLIDESHOW CSS END --*/

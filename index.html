@@ -50,21 +50,23 @@
           <a id='reset' class='reset' href='index.html'>Reset</a>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
-          <h2 class='title'>Mitch-sta-pic</h2>
+          <div class='mini'>
+            <h2 class='title'>Mitch-sta-pic</h2>
+          </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
           <a id='source-code' class='source-code' href='https://github.com/MitchellSH/Mitch-sta-pic'>Source Code</a>
         </div>
       </div>
-      <div class="row animated fadeIn">
+      <div class="row animated fadeInDown">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div id='container'>
-            <h1 id='title'>Mitch-sta-pic</h1>
+            <h1 id='title' class='title'>Mitch-sta-pic</h1>
             <p id='title-p'></p>
           </div>
         </div>
       </div>
-      <div class='row animated fadeIn'>
+      <div class='row animated fadeInUp'>
         <div class="col-sm-4 col-md-4 col-lg-4">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4" style='text-align: center'>
@@ -77,15 +79,15 @@
         <div class="col-sm-4 col-md-4 col-lg-4">
         </div>
         <div class='col-sm-4 col-md-4 col-lg-4'>
-          <div class='input-group search-container'>
+          <div class='input-group search-container animated fadeInUp'>
             <input id='search-bar', class='form-control', type='text', placeholder='Search #Tag' autofocus='true'>
             <span class="input-group-btn">
               <button class="btn btn-default" type="button">Enter
               </button>
             </span>
           </div>
-          <div class='slideshow-div'>
-            <a id='slideshow'>Create A Slideshow
+          <div class='slideshow-div animated fadeInUp'>
+            <a id='slideshow' href='#' data-toggle="modal" data-target="#myModal">Create A Slideshow
             </a>
           </div>
         </div>
@@ -107,14 +109,49 @@
         </div>
         <div class='col-sm-4 col-md-4 col-lg-4'>
           <div id='next-div'>
-            <a id='next' href='#'>Next
+            <a id='next' href='#'>View Queue
             </a>
           </div>
           <div class="col-sm-4 col-md-4 col-lg-4">
           </div>
         </div>
       </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
 
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- JQUERY JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

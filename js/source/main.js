@@ -8,7 +8,7 @@
     $('#start').click(showSearchSection);
     $('.btn').click(getPics);
     $('#next').click(showSelectedPics);
-    // $('#reset').click(homeButton);
+    $('#slideshow').click(showModal);
 //     $('#invert').click(invertPic);
 //     $('#sepia').click(sepiaPic);
 //     $('#gray').click(grayscalePic);
@@ -29,7 +29,7 @@
     $('.selected-pics').show().addClass('animated fadeIn');
     $('#next-div').hide();
 
-    $('#title').text('Your Selected Pics').removeClass('animated slideInDown').addClass('animated rotateIn');
+    $('#title').text('Your Queue').addClass('animated fadeInUp');
     $('#title-p').hide();
     $('.search-container').hide();
     $('#target').hide();
@@ -38,11 +38,16 @@
 //
 //
   function showSearchSection(){
-    $('.title').show().addClass('img animated fadeIn');
+    $('.title').show();
+    $('.mini').show().addClass('img animated fadeInUp');
     $('.search-container').show().addClass('animated fadeIn');
-    $('#title').text('Search #Tags').addClass('animated fadeIn');
-    $('#title-p').text('Search and Select 6 Pics.').addClass('animated fadeIn');
+    $('#title').text('Search #Tags').addClass('animated fadeInDown').removeClass('title');
+    $('#title-p').text('Search and Select 6 Pics.').addClass('animated fadeInUp');
     $('.start').hide();
+  }
+
+  function showModal(){
+    $('.modal').show();
   }
 
 //   function homeButton(){
@@ -111,11 +116,11 @@
     if($('.selected-pics').children('img').length < 6 || !$('.selected-pics').children('img').length){
       $('.selected-pics').append(this);
       $('#next-div').show().addClass('img animated fadeIn');
-//       var $li = $('<li>');
-//       var $bigPic = $(this).clone().attr('src');
-//       $bigPic = $bigPic.replace('_5','_6');
-//       $li.append('<img src="' +$bigPic+ '">');
-//       $('.orbitSlider').append($li);
+      // var $li = $('<li>');
+      // var $bigPic = $(this).clone().attr('src');
+      // $bigPic = $bigPic.replace('_5','_6');
+      // $li.append('<img src="' +$bigPic+ '">');
+      // $('.orbi').append($li);
     }
   }
 //   //------Adding To Q Functions----------
@@ -134,7 +139,7 @@
   function displayPics(instaData){
     var pics = instaData.data;
     for(var i=0; i < pics.length; i++){
-      $('#target').append('<img class="img animated fadeIn" src="'+pics[i].images.thumbnail.url+'">');
+      $('#target').append('<img class="img animated fadeInDown" src="'+pics[i].images.thumbnail.url+'">');
     }
   }
 //
