@@ -11,11 +11,12 @@ A fun and simple app that uses Instagram's API to pull in pictures associated wi
 you have searched for pictures, you can then select up to 6 pictures and create a slideshow with your selection. Fun!
 
 
-Dependencies
+Technologies
 =============
 
 * HTML5
 * CSS3
+* SASS
 * Javascript
 * jQuery
 * Lo_Dash
