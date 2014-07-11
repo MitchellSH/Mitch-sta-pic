@@ -107,11 +107,11 @@
 //     $('.orbitSlider img').addClass('sepia');
 //
 //   }
-//
-//   //------Filter Functions---------------
-//
-//   //------Adding To Q Functions----------
-//
+
+   //------Filter Functions---------------
+
+   //------Adding To Q Functions----------
+
   function add2Q(){
     if($('.selected-pics').children('img').length < 6 || !$('.selected-pics').children('img').length){
       $('.selected-pics').append(this);
@@ -123,11 +123,11 @@
       // $('.orbi').append($li);
     }
   }
-//   //------Adding To Q Functions----------
-//
-//   //------Instagram API Functions--------
-//
-//
+   //------Adding To Q Functions----------
+
+   //------Instagram API Functions--------
+
+
   function getPics(){
     emptyPics();
     var tag = $('#search-bar').val().replace(/\s/gi,"");
@@ -135,17 +135,14 @@
     var url = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?client_id=86cecf102fdd46599736c4deac452424&callback=?&count=' + count;
     $.getJSON(url, displayPics);
   }
-//
+
   function displayPics(instaData){
     var pics = instaData.data;
     for(var i=0; i < pics.length; i++){
       $('#target').append('<img class="img animated fadeInDown" src="'+pics[i].images.thumbnail.url+'">');
     }
   }
-//
-//   //------Instagram API Functions--------
-//
-//
-//
-//
+
+   //------Instagram API Functions--------
+
 })();
